@@ -19,3 +19,4 @@ def add_integer(a, b=98):
         raise TypeError("b must be an integer")
 
     return int(a) + int(b)
+gerer negative float
