@@ -1,15 +1,13 @@
-'''
+"""
 Module: 0-add_integer
 
 This module provides a function to perform integer addition with type validation.
-
 Functions:
 add_integer(a, b=98):
 Adds two integers or floats, converting float values to integers before performing the addition.
-
 Raises:
 TypeError: If either a or b is not an integer or a float.
-'''
+"""
 >>> add_integer = __import__('0-add_integer').add_integer
 >>> add_integer(1, 2)
 3
