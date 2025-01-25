@@ -12,6 +12,7 @@
         TypeError: If a or b are not integers or floats.
 '''
 
+
 def add_integer(a, b=98):
     """
     Args:
