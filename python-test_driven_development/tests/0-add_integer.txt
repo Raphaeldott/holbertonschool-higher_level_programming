@@ -18,7 +18,7 @@ TypeError: a must be an integer
 >>> add_integer(1.5, 2.5)
 3
 >>> add_integer(-1.5, 2)
-0.5
+1
 >>> add_integer(0, 0)
 0
 >>> add_integer(999999999, 1)
