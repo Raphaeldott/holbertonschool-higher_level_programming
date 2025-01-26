@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-  '''
+'''
     Divides all elements of a matrix by a given number.
 
     Args:
@@ -15,7 +15,9 @@
     Returns:
         list: A new matrix with each element divided by div,
         rounded to 2 decimal places.
-    '''
+'''
+
+
 def matrix_divided(matrix, div):
     '''
     Divides all elements of a matrix by a given number.
