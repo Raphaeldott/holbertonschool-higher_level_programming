@@ -1,4 +1,21 @@
 #!/usr/bin/python3
+  '''
+    Divides all elements of a matrix by a given number.
+
+    Args:
+        matrix (list of lists): A matrix (list of lists) of integers/floats.
+        div (int/float): The divisor.
+
+    Raises:
+        TypeError: If matrix is not a list of lists of integers/floats.
+        TypeError: If each row of the matrix is not of the same size.
+        TypeError: If div is not a number.
+        ZeroDivisionError: If div is zero.
+
+    Returns:
+        list: A new matrix with each element divided by div,
+        rounded to 2 decimal places.
+    '''
 def matrix_divided(matrix, div):
     '''
     Divides all elements of a matrix by a given number.
