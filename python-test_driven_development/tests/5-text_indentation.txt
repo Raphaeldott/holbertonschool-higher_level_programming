@@ -11,7 +11,6 @@ It is fun.
 
 >>> text_indentation("No special characters here")
 No special characters here
-<BLANKLINE>
 
 >>> text_indentation("A test: with multiple: colons:")
 A test:
@@ -40,11 +39,9 @@ There.
 <BLANKLINE>
 
 >>> text_indentation("")
-<BLANKLINE>
 
 >>> text_indentation("No punctuation to process")
 No punctuation to process
-<BLANKLINE>
 
 >>> text_indentation("Ending with punctuation:")
 Ending with punctuation:
