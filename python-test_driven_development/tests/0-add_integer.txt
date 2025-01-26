@@ -18,8 +18,17 @@ TypeError: a must be an integer
 >>> add_integer(1.5, 2.5)
 3
 >>> add_integer(-1.5, 2)
-1
+0.5
 >>> add_integer(0, 0)
 0
 >>> add_integer(999999999, 1)
 1000000000
+>>> add_integer(float('inf'), 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(1.8e308, 1)
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
