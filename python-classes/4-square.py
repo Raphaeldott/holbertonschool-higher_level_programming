@@ -7,7 +7,7 @@ __size (int): The size of the square's side.
 
 
 class Square:
-"""too many coms"""
+    """too many coms"""
     def __init__(self, size=0):
         """
         Initializes a square with a given size.
