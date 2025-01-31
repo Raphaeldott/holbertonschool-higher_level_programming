@@ -5,4 +5,5 @@
 
 
 class Square:
+    """ this class just pass"""
     pass
