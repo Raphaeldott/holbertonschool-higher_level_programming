@@ -18,6 +18,7 @@ area():
 
 
 class Square:
+    """too many comments"""
     def __init__(self, size=0):
         """
         Initializes a square with a given size.

@@ -20,6 +20,7 @@ my_print():
 
 
 class Square:
+    """dead inside"""
     def __init__(self, size=0, position=(0, 0)):
         """
         Initializes the square with an optional size and position.
