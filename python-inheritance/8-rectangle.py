@@ -43,6 +43,10 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
+        if name is None or not isinstance(name, str):
+            raise TypeError("name must be a string")
+        if value is None:
+            raise TypeError(f"{name} must be an integer")
 
 
 class Rectangle(BaseGeometry):
