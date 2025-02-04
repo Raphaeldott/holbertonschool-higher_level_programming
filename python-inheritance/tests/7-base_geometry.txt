@@ -5,8 +5,41 @@
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
-# Additional edge cases
+# Edge cases
+>>> bg.integer_validator("zero_value", 0)
+Traceback (most recent call last):
+    ...
+ValueError: zero_value must be greater than 0
 
->>> bg.integer_validator("large_int", 999999999999999999)
->>> bg.integer_validator("small_int", 1)
+>>> bg.integer_validator("negative_value", -5)
+Traceback (most recent call last):
+    ...
+ValueError: negative_value must be greater than 0
+
+# Testing with a missing argument
+>>> bg.integer_validator("only_name")
+Traceback (most recent call last):
+    ...
+TypeError: only_name must be an integer
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: name must be a string
+
+# Testing non-integer values
+>>> bg.integer_validator("string_value", "hello")
+Traceback (most recent call last):
+    ...
+TypeError: string_value must be an integer
+
+>>> bg.integer_validator("float_value", 3.14)
+Traceback (most recent call last):
+    ...
+TypeError: float_value must be an integer
+
+>>> bg.integer_validator("boolean_value", True)
+Traceback (most recent call last):
+    ...
+TypeError: boolean_value must be an integer
 
