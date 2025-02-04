@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-'''
+"""
 This module contains one class BaseGeometry and inherited class Rectangle
-'''
+"""
 
 
 class BaseGeometry:
@@ -18,9 +18,9 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 
-'''
+"""
 second class
-'''
+"""
 
 
 class Rectangle(BaseGeometry):
