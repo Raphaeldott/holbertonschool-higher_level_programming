@@ -1,45 +1,46 @@
 #!/usr/bin/python3
-Rectangle = __import__('9-rectangle').Rectangle
+'''
+This module contains one class BaseGeometry and inherited class Rectangle
+'''
 
-"""
-Square class that inherits from Rectangle.
 
-This class defines a square with a single size attribute, which is a positive
-integer validated by the integer_validator method. The area() method is
-implemented and calculates the area of the square using the inherited method
-from Rectangle. The string representation is the same format as Rectangle.
-"""
+class BaseGeometry:
+    """Class for basic geometry calculation"""
+    def area(self):
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        if isinstance(value, bool):
+            raise TypeError(f"{name} must be an integer")
+        if not isinstance(value, int):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
+
+
+class Rectangle(BaseGeometry):
+    """Inherited class of BaseGeometry"""
+    def __init__(self, width, height):
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
+        self.__width = width
+        self.__height = height
+
+    def area(self):
+        return self.__width * self.__height
+
+    def __str__(self):
+        return f"[Rectangle] {self.__width}/{self.__height}"
 
 
 class Square(Rectangle):
-    """
-    Square class that inherits from Rectangle.
-
-    This class defines a square using a single size attribute. The size is
-    validated to be a positive integer. The area() method calculates the
-    area of the square using the inherited method from the Rectangle class.
-    """
-
+    """Inherited class of Rectangle"""
     def __init__(self, size):
-        """
-        Initializes a new Square object with validated size.
-
-        Args:
-            size (int): The size of the square.
-
-        Raises:
-            TypeError: If size is not an integer.
-            ValueError: If size is less than or equal to 0.
-        """
-        self.integer_validator("size", size)  # Validate size
-        self.__size = size  # Private attribute
-        super().__init__(size, size)
+        super().integer_validator("size", size)
+        self.__size = size
 
     def area(self):
-        """
-        Calculates the area of the square.
+        return self.__size * self.__size
 
-        Returns:
-            int: The area of the square (size * size).
-        """
-        return super().area()
+    def __str__(self):
+        return f"[Rectangle] {self.__size}/{self.__size}"
