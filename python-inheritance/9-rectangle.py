@@ -45,7 +45,6 @@ class BaseGeometry:
             raise TypeError(f"{name} must be an integer")
 
 
-
 """
 Rectangle class that inherits from BaseGeometry.
 
