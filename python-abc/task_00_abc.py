@@ -1,4 +1,6 @@
+#!/usr/bin/python3
 from abc import ABC, abstractmethod
+
 
 class Animal(ABC):
     """
@@ -8,9 +10,11 @@ class Animal(ABC):
     @abstractmethod
     def sound(self):
         """
-        Abstract method that should be implemented by subclasses to return the animal's sound.
+        Abstract method that should be implemented by subclasses
+        to return the animal's sound.
         """
         pass
+
 
 class Dog(Animal):
     """
@@ -21,6 +25,7 @@ class Dog(Animal):
         Returns the sound a dog makes.
         """
         return "Bark"
+
 
 class Cat(Animal):
     """
