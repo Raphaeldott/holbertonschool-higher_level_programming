@@ -1,17 +1,9 @@
 #!/usr/bin/python3
 Rectangle = __import__('8-rectangle').Rectangle
 
-r = Rectangle(3, 5)
-
-print(r)
-print(dir(r))
 
 try:
-    print("Rectangle: {} - {}".format(r.width, r.height))
-except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    r2 = Rectangle(2000000000000000000, 1)
 
-try:
-    r2 = Rectangle(None, None)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
