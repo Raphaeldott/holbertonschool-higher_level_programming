@@ -1,5 +1,46 @@
 #!/usr/bin/python3
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+"""
+BaseGeometry class
+"""
+
+
+class BaseGeometry:
+    """
+    A class representing base geometry with validation methods.
+
+    Public instance methods:
+        - area: raises an exception if not implemented in a subclass.
+        - integer_validator: validates integer values.
+    """
+
+    def area(self):
+        """
+        Raises an exception because the area method is not implemented.
+
+        Raises:
+            Exception: with the message "area() is not implemented"
+        """
+        raise Exception("area() is not implemented")
+
+    def integer_validator(self, name, value):
+        """
+        Validates the value to ensure it's a positive integer.
+
+        Args:
+            name (str): the name to be used in error messages.
+            value (int): the value to be validated.
+
+        Raises:
+            TypeError: if value is not an integer or is a boolean.
+            ValueError: if value is less than or equal to 0.
+        """
+        if not isinstance(value, int) or isinstance(value, bool):
+            raise TypeError(f"{name} must be an integer")
+        if value <= 0:
+            raise ValueError(f"{name} must be greater than 0")
+
+
 
 """
 Rectangle class that inherits from BaseGeometry.
@@ -35,8 +76,8 @@ class Rectangle(BaseGeometry):
             TypeError: If width or height is not an integer.
             ValueError: If width or height is less than or equal to 0.
         """
-        super().integer_validator("width", width)  # Validate width
-        super().integer_validator("height", height)  # Validate height
+        self.integer_validator("width", width)  # Validate width
+        self.integer_validator("height", height)  # Validate height
         self.__width = width  # Private attribute
         self.__height = height  # Private attribute
 
