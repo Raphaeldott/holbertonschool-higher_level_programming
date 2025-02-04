@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 '''
 This module contains one class BaseGeometry and inherited class Rectangle
 '''
@@ -38,14 +37,11 @@ class Square(Rectangle):
     """Inherited class of Rectangle"""
     def __init__(self, size):
         super().integer_validator("size", size)
-        self._Rectangle__width = size
-        self._Rectangle__height = size
-
-
+        self.__size = size
+        super().__init__(size, size)
 
     def area(self):
         return self.__size * self.__size
 
     def __str__(self):
-        return "[Square] {}/{}".format(self._Rectangle__width,
-                                       self.Rectangle__height)
+        return "[Square] {}/{}".format(self.__size, self.__size)
