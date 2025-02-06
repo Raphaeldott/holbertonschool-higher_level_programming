@@ -6,6 +6,10 @@ import math
 class Shape(ABC):
     """
     Abstract base class representing a shape.
+    Args:
+        ABC
+    Returns:
+        Nothing
     """
     @abstractmethod
     def area(self):
