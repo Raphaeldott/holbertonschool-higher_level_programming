@@ -23,10 +23,10 @@ def verify_password(username, password):
         return user
 
 
-@app.route('/basic-protected', methods=['GET'])
+@app.route('/basic-protected')
 @auth.login_required
 def basic_protected():
-    return jsonify({"Basic Auth: Access Granted"})
+    return "Basic Auth: Access Granted"
 
 
 @app.route('/login', methods=['POST'])
@@ -34,19 +34,20 @@ def login():
     data = request.get_json()
     username = data.get("username")
     password = data.get("password")
+    user = users.get(username)
     
-    if username in users and check_password_hash(users[username]["password"], password):
-        access_token = create_access_token(identity={"username": username, "role": users[username]["role"]})
+    if user and check_password_hash(user["password"], password):
+        access_token = create_access_token(identity={"username": username, "role": user["role"]})
         return jsonify({"access_token": access_token})
     return jsonify({"error": "Invalid credentials"}), 401
 
 
-@app.route('/jwt-protected', methods=['GET'])
+@app.route('/jwt-protected')
 @jwt_required()
 def jwt_protected():
-    return jsonify({"JWT Auth: Access Granted"})
+    return "JWT Auth: Access Granted"
 
-@app.route('/admin-only', methods=['GET'])
+@app.route('/admin-only')
 @jwt_required()
 def admin_only():
     current_user = get_jwt_identity()
