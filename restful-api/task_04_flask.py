@@ -4,6 +4,9 @@ app = Flask(__name__)
 
 users = {}
 
+ERROR_USER_NOT_FOUND = {"error": "User not found"}
+ERROR_USERNAME_REQUIRED = {"error": "Username is required"}
+
 @app.route('/')
 def home():
     return "Welcome to the Flask API!"
