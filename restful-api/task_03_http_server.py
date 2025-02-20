@@ -1,7 +1,5 @@
-#!/usr/bin/python3
 import http.server
 import json
-import socketserver
 
 class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
@@ -20,7 +18,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header("Content-type", "application/json")
             self.end_headers()
-            self.wfile.write(json.dumps({"status": "OK"}).encode("utf-8"))
+            self.wfile.write(json.dumps(b"OK"))
         elif self.path == '/info':
             self.send_response(200)
             self.send_header("Content-type", "application/json")
@@ -32,7 +30,6 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(json.dumps({"error": "Endpoint not found"}).encode("utf-8"))
 
-PORT = 8000
-with socketserver.TCPServer(("", PORT), SimpleAPIHandler) as httpd:
-    print(f"Serving on port {PORT}")
-    httpd.serve_forever()
+httpd = http.server.HTTPServer(('localhost', 8000), SimpleAPIHandler)
+print(f"Serving on port {8000}")
+httpd.serve_forever()
