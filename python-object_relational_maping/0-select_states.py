@@ -15,17 +15,15 @@ if __name__ == "__main__":
     database = sys.argv[3]
 
     # Connect to the MySQL server on localhost at port 3306
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database, port=3306)
+    db = MySQLdb.connect(host="localhost", user=username,
+                         passwd=password, db=database, port=3306)
     cursor = db.cursor()
-    
     # Execute SQL query to retrieve all states sorted by id
     cursor.execute("SELECT * FROM states ORDER BY id ASC;")
-    
     # Fetch and print results
     for row in cursor.fetchall():
         print(row)
-    
+
     # Clean up
     cursor.close()
     db.close()
-
