@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+''' model city fetch by state '''
 from model_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
